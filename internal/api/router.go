@@ -1,14 +1,15 @@
 package api
 
 import (
-	"github.com/gorilla/mux"
+	"github.com/gin-gonic/gin"
 )
 
-func NewRouter() *mux.Router {
-	router := mux.NewRouter()
+func NewRouter() *gin.Engine {
+	router := gin.Default()
 
-	// ここにエンドポイントとハンドラーを追加します
-	// 例: router.HandleFunc("/api/example", ExampleHandler).Methods("GET")
+	// ルートの設定
+	// 例: router.GET("/api/example", ExampleHandler)
+	router.GET("/api/example", HealthCheckHandler)
 
 	return router
 }
