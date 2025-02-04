@@ -1,6 +1,13 @@
 package main
 
+// @title Commonplace Go API
+// @version 1.0
+// @description This is a sample server for Commonplace Go API.
+// @host localhost:8080
+// @BasePath /api
+
 import (
+	_ "commonplace-go/docs" // Swaggerドキュメントをインポート
 	"commonplace-go/internal/api"
 	"log"
 )

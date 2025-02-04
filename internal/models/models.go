@@ -1,24 +1,43 @@
 package models
 
+// swagger:model User
 // User represents a user in the system.
 type User struct {
-    ID    int    `json:"id"`
-    Name  string `json:"name"`
-    Email string `json:"email"`
+	// ユーザーID
+	// required: true
+	ID int `json:"id"`
+	// ユーザー名
+	// required: true
+	// example: John Doe
+	Name string `json:"name"`
+	// メールアドレス
+	// required: true
+	// example: john@example.com
+	Email string `json:"email"`
 }
 
+// swagger:model Post
 // Post represents a blog post in the system.
 type Post struct {
-    ID      int    `json:"id"`
-    Title   string `json:"title"`
-    Content string `json:"content"`
-    Author  User   `json:"author"`
+	// 記事ID
+	// required: true
+	ID int `json:"id"`
+	// 記事タイトル
+	// required: true
+	// example: My First Post
+	Title string `json:"title"`
+	// 記事本文
+	// required: true
+	Content string `json:"content"`
+	// 投稿者情報
+	// required: true
+	Author User `json:"author"`
 }
 
 // Comment represents a comment on a blog post.
 type Comment struct {
-    ID     int    `json:"id"`
-    PostID int    `json:"post_id"`
-    User   User   `json:"user"`
-    Content string `json:"content"`
+	ID      int    `json:"id"`
+	PostID  int    `json:"post_id"`
+	User    User   `json:"user"`
+	Content string `json:"content"`
 }
