@@ -7,7 +7,7 @@ package main
 // @BasePath /api
 
 import (
-	_ "commonplace-go/docs" // Swaggerドキュメントをインポート
+	_ "commonplace-go/api" // Swaggerドキュメントをインポート
 	"commonplace-go/internal/api"
 	"log"
 )
