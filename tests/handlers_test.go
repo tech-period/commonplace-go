@@ -1,6 +1,7 @@
-package api
+package tests
 
 import (
+	"commonplace-go/internal/api"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -16,7 +17,7 @@ func TestHelloHandler(t *testing.T) {
 	c.Request = httptest.NewRequest(http.MethodGet, "/hello", nil)
 
 	// Execute
-	HelloHandler(c)
+	api.HelloHandler(c)
 
 	// Assert
 	if w.Code != http.StatusOK {
@@ -36,7 +37,7 @@ func TestHealthCheckHandler(t *testing.T) {
 	c.Request = httptest.NewRequest(http.MethodGet, "/health", nil)
 
 	// Execute
-	HealthCheckHandler(c)
+	api.HealthCheckHandler(c)
 
 	// Assert
 	if w.Code != http.StatusOK {
